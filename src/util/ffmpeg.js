@@ -47,7 +47,8 @@ export const extractFrameImage = async (vidfn, time) => {
   const tmpfile = await tmp.file({keep: true, postfix: '.jpg'});
 
   await new Promise((resolve, reject) => {
-    const subp = spawn(getBinaryFilename(), ['-ss', time.toString(), '-i', vidfn, '-vf', "scale='min(854,iw)':'min(480,ih)':force_original_aspect_ratio=decrease", '-frames:v', '1', '-y', tmpfile.path], {windowsHide: true, stdio: ['ignore', 'pipe', 'pipe']});
+    const subp = spawn(getBinaryFilename(), ['-ss', time.toString(), '-i', vidfn, '-vf', "scale='min(854,iw)':'min(480,ih)':force_original_aspect_ratio=decrease", '-qscale:v', '2', '-frames:v', '1', '-y', tmpfile.path], {windowsHide: true, stdio: ['ignore', 'pipe', 'pipe']});
+    console.log(subp)
 
     subp.on('error', (error) => {
       reject(error);

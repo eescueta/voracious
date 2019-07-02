@@ -102,7 +102,7 @@
 
 .Player-text-chunk-inner {
   color: white;
-  font-size: 4.5em;
+  font-size: 2.7em;
   margin: 10px auto;
   overflow: hidden;
   padding: 0.3em 0.5em;
@@ -131,7 +131,7 @@
 }
 
 .Player-text-chunk-annotext-hidden {
-  /*visibility: hidden;*/
+  visibility: hidden;
   filter: blur(6px);
   transition: filter 0s;
   pointer-events: none;
@@ -139,7 +139,7 @@
 
 .Player-text-chunk-annotext-visible {
   transition: filter 0.2s;
-  /*visibility: visible;*/
+  visibility: visible;
 }
 
 .Player video {
